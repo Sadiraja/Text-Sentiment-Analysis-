@@ -115,7 +115,7 @@ def evaluate_model(true_labels, pred_labels):
 # Main function
 def main():
     # Load IMDB dataset
-    df = pd.read_csv('imdb_dataset.csv')  # Update with actual path
+    df = pd.read_csv('imdb_dataset.csv')  # Update with actual path get data from kaggle
     reviews = df['review'].tolist()
     labels = df['sentiment'].tolist()
 
@@ -157,12 +157,7 @@ def main():
     print(f"Recall: {recall:.2f}")
     print(f"F1-Score: {f1:.2f}")
 
-    # Multiple sample predictions
-    samples = [
-        "This movie was fantastic and really enjoyable!",
-        "The plot was boring and the acting was terrible.",
-        "An average film with some good moments."
-    ]
+    
     sample=input("Enter a sample text for sentiment analysis: ")
 
     idf = compute_idf(processed_docs)
